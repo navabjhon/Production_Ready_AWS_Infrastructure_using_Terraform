@@ -1,4 +1,4 @@
-# 🚀 Terraform AWS Production Infrastructure
+# 🚀 AWS Production Infrastructure using Terraform
 
 ## 📌 Overview
 
