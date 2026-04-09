@@ -16,6 +16,9 @@ This project provisions a **production-grade AWS infrastructure** using Terrafor
 * EC2 instances in private subnet
 * Security Groups for controlled access
 
+  <img width="1640" height="924" alt="image" src="https://github.com/user-attachments/assets/b9b424c1-f0d0-4b3b-905a-88847c76c4d8" />
+
+
 ---
 
 ## ⚙️ Tech Stack
