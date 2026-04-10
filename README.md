@@ -1,31 +1,38 @@
-# 🚀 AWS Production Infrastructure using Terraform
+# 🚀 Production-Ready AWS Infrastructure using Terraform
 
 ## 📌 Overview
 
-This project provisions a **production-grade AWS infrastructure** using Terraform, following DevOps best practices such as modular design, scalability, and high availability.
+This project demonstrates how to build a **highly available, scalable AWS infrastructure** using Terraform.
+
+It includes:
+
+* Custom VPC with public subnets
+* Application Load Balancer (ALB)
+* Auto Scaling Group (ASG)
+* EC2 instances running NGINX
+* Infrastructure provisioning using modular Terraform code
 
 ---
 
-## 🧱 Architecture
+## 🏗️ Architecture
 
-* Custom VPC (Multi-AZ)
-* Public and Private Subnets
-* Internet Gateway & NAT Gateway
-* Application Load Balancer (ALB)
-* Auto Scaling Group (ASG)
-* EC2 instances in private subnet
-* Security Groups for controlled access
+```
+User → ALB → Target Group → Auto Scaling Group → EC2 (NGINX)
+```
 
-  <img width="1640" height="924" alt="image" src="https://github.com/user-attachments/assets/b9b424c1-f0d0-4b3b-905a-88847c76c4d8" />
-
+* ALB distributes incoming traffic
+* ASG ensures high availability and scaling
+* EC2 instances serve application via NGINX
 
 ---
 
 ## ⚙️ Tech Stack
 
-* Terraform (Infrastructure as Code)
-* AWS (VPC, EC2, ALB, ASG, IAM)
-* NGINX (deployed via user data)
+* **Cloud**: AWS
+* **IaC**: Terraform
+* **OS**: Ubuntu / Amazon Linux
+* **Web Server**: NGINX
+* **Load Balancer**: AWS ALB
 
 ---
 
@@ -37,73 +44,140 @@ terraform-aws-infra/
 ├── modules/
 │   ├── vpc/
 │   ├── alb/
-│   ├── autoscaling/
+│   └── autoscaling/
 │
 ├── main.tf
-├── variables.tf
-├── outputs.tf
 ├── provider.tf
-├── terraform.tfvars
+├── variables.tf
 ```
 
 ---
 
 ## 🚀 Features
 
-* Multi-AZ high availability setup
-* Infrastructure as Code using Terraform
-* Auto Scaling for dynamic workloads
-* Load balancing using AWS ALB
-* Secure networking with private subnets
-* Automated EC2 provisioning with user data
+* Modular Terraform design
+* Dynamic AMI selection
+* Automated NGINX deployment using user_data
+* Load-balanced architecture
+* Auto Scaling for high availability
 
 ---
 
-## 🔧 Prerequisites
+## 🛠️ Setup Instructions
 
-* AWS CLI configured
-* Terraform installed
-* AWS account with required permissions
+### 1. Clone the Repository
+
+```
+git clone git@github.com:navabjhon/Production_Ready_AWS_Infrastructure_using_Terraform.git
+cd terraform-aws-infra
+```
 
 ---
 
-## ▶️ How to Deploy
+### 2. Initialize Terraform
 
-```bash
+```
 terraform init
+```
+
+---
+
+### 3. Plan Infrastructure
+
+```
 terraform plan
+```
+
+---
+
+### 4. Apply Changes
+
+```
 terraform apply
 ```
 
 ---
 
-## 🧹 Cleanup
+### 5. Access Application
 
-To avoid AWS charges:
-
-```bash
-terraform destroy
-```
+* Copy ALB DNS from AWS Console
+* Open in browser
 
 ---
 
-## 📊 Outcome
+## 📸 Screenshots
 
-* Highly available infrastructure
-* Scalable application deployment
-* Automated provisioning
+### 🌐 ALB Working
 
----
+Application Load Balancer successfully routing traffic to backend instances.
 
-## 📌 Future Improvements
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7ac83505-858a-42e2-8c01-084ec9c57849" />
 
-* Remote backend (S3 + DynamoDB)
-* CI/CD pipeline using Jenkins
-* Monitoring using Prometheus & Grafana
 
 ---
 
-## 👨‍💻 Author
 
-Navab Jhon Shaik
-DevOps Engineer (Transitioning from Linux System Administrator)
+
+### 🎯 Target Group Healthy
+
+Instances are healthy and passing health checks.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/85da0293-6487-4df6-85a2-f7c4b46674ff" />
+
+
+---
+
+### ⚙️ Auto Scaling Group
+
+ASG maintaining desired capacity and scaling instances.
+
+<img width="1919" height="1059" alt="image" src="https://github.com/user-attachments/assets/8b23ceda-ba24-4105-847a-73e1ea51c016" />
+
+
+---
+
+### 🖥️ EC2 Instances
+
+Instances launched automatically via launch template.
+
+<img width="1916" height="1077" alt="image" src="https://github.com/user-attachments/assets/0dba772d-7c1e-4fd1-92cb-e5b9e9723041" />
+
+
+---
+
+### 🌍 VPC Setup
+
+Custom VPC with properly configured networking components.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/ff56a83c-31bf-4c4d-af2d-3237f352c121" />
+
+
+---
+
+## 🧠 Challenges & Learnings
+
+* Debugged ALB 504 errors
+* Fixed user_data execution issues
+* Handled AMI compatibility problems
+* Solved networking issues (public vs private subnet)
+* Understood Terraform module structure deeply
+
+---
+
+## 🔐 Improvements (Next Steps)
+
+* Implement remote backend (S3 + DynamoDB)
+* Integrate CI/CD pipeline (Jenkins/GitHub Actions)
+* Add monitoring (Prometheus + Grafana)
+
+---
+
+## 📢 Conclusion
+
+This project demonstrates real-world DevOps skills including infrastructure provisioning, debugging, and system design using Terraform and AWS.
+
+---
+
+## 🤝 Connect
+
+If you found this useful or have feedback, feel free to connect!
