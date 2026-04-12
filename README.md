@@ -1,5 +1,7 @@
 # 🚀 AWS-Infrastructure-Terraform-Production
 
+* Terraform | AWS | Jenkins | Docker | Kubernetes
+
 ## 📌 Overview
 
 Production-ready AWS infrastructure provisioning using Terraform with modular design, remote backend (S3 + DynamoDB), and scalable architecture.
@@ -11,6 +13,16 @@ It includes:
 * Auto Scaling Group (ASG)
 * EC2 instances running NGINX
 * Infrastructure provisioning using modular Terraform code
+
+---
+
+## 🎯 Why this project?
+
+This project was built to demonstrate real-world infrastructure automation using Terraform instead of manual AWS provisioning. 
+
+It focuses on applying production-level practices such as modular code structure, remote state management using S3 and DynamoDB, and scalable infrastructure design.
+
+The goal was to simulate how infrastructure is managed in enterprise environments with consistency, reusability, and version control.
 
 ---
 
@@ -68,7 +80,8 @@ terraform-aws-infra/
 ### 1. Clone the Repository
 
 ```
-git clone git@github.com:navabjhon/Production_Ready_AWS_Infrastructure_using_Terraform.git
+git clone git@github.com:navabjhon/aws-infrastructure-terraform-production.git
+
 cd terraform-aws-infra
 ```
 
@@ -172,9 +185,10 @@ Custom VPC with properly configured networking components.
 
 ---
 
-## 📢 Conclusion
-
-This project demonstrates real-world DevOps skills including infrastructure provisioning, debugging, and system design using Terraform and AWS.
+## 📌 Key Highlights
+- Modular Terraform
+- Reusable code
+- Production-ready design
 
 ---
 
