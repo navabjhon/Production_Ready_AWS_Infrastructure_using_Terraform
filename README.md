@@ -1,8 +1,8 @@
-# 🚀 Production-Ready AWS Infrastructure using Terraform
+# 🚀 AWS-Infrastructure-Terraform-Production
 
 ## 📌 Overview
 
-This project demonstrates how to build a **highly available, scalable AWS infrastructure** using Terraform.
+Production-ready AWS infrastructure provisioning using Terraform with modular design, remote backend (S3 + DynamoDB), and scalable architecture.
 
 It includes:
 
